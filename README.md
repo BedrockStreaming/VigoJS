@@ -1,4 +1,4 @@
-# VigoJS
+# VigoJS [![Build Status](https://secure.travis-ci.org/M6Web/VigoJS.png)](http://travis-ci.org/M6Web/VigoJS)
 
 VigoJS is a (small) Javascript tool using [CasperJS](http://casperjs.org/) and [PhantomJS](http://phantomjs.org/) to make easily functional tests on web applications.
 
