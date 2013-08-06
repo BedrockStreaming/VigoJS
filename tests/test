@@ -1,0 +1,24 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+. ../config/path.conf
+
+if [[ "$CASPERJS_CMD" != *"/"* ]]
+then
+    CASPERJS_PATH=$(whereis $CASPERJS_CMD | sed "s/$CASPERJS_CMD://")
+    
+    SYMLINK=$(readlink $CASPERJS_PATH)
+    SYMLINK_RET=$?
+    if [ ! $SYMLIN_RET ]
+    then
+        CASPERJS_PATH=$SYMLINK
+    fi
+else
+    CASPERJS_PATH=$CASPERJS_CMD
+fi
+
+CASPERJS_PATH=$(echo $CASPERJS_PATH | sed -r 's/\/[^\/]*$/\/..\//')
+export CASPERJS_PATH
+
+$PHANTOMJS_CMD run.js --buildPath=../build $@

@@ -1,0 +1,10 @@
+{
+    "env":            "prod",
+    "buildPath":      "build",
+    "login":          null,
+    "pwd":            null,
+    "viewportWidth":  1024,
+    "viewportHeight": 768,
+    "testedUrl":      null,
+    "urlParameters":  null
+}

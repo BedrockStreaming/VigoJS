@@ -1,0 +1,7 @@
+{
+    "env":        "test environment",
+    "login":      "login to access tested platform",
+    "pwd":        "pwd to access tested platform",
+    "buildPath":  "path to store JUnit XML file, and screenshot of webpage when error occurs",
+    "configPath": "VigoJS configuration file path"
+}

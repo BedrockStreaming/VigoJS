@@ -1,0 +1,31 @@
+{
+    "name": "vigojs",
+    "description": "Test tool suite for website and web application based on CasperJS",
+    "version": "0.0.1",
+    "keywords": ["phantomjs","casperjs","test","vigojs"],
+    "maintainers": [
+        {
+            "name": "M6Web",
+            "email": "opensource@m6web.fr",
+            "web": "http://tech.m6web.fr/"
+        }
+    ],
+    "devDependencies": {
+        "jshint": "2.1.x"
+    },
+    "bugs": {
+        "url": "https://github.com/M6Web/VigoJS/issues"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git://github.com/M6Web/VigoJS.git"
+        }
+    ],
+    "licenses": [
+        {
+            "name": "MIT",
+            "url": "https://github.com/M6Web/VigoJS/blob/master/LICENSE"
+        }
+    ]
+}
