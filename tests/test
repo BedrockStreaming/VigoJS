@@ -6,7 +6,7 @@ cd $(dirname $0)
 
 if [[ "$CASPERJS_CMD" != *"/"* ]]
 then
-    CASPERJS_PATH=$(whereis $CASPERJS_CMD | sed "s/$CASPERJS_CMD: //" | cut -d" " -f1)
+    CASPERJS_PATH=$(which $CASPERJS_CMD)
     
     SYMLINK=$(readlink -f $CASPERJS_PATH)
     SYMLINK_RET=$?
