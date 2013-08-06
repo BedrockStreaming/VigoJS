@@ -1,0 +1,22 @@
+branches:
+  only:
+    - "master"
+
+before_install:
+  - echo "installing PhantomJS 1.9.1"
+  - wget http://phantomjs.googlecode.com/files/phantomjs-1.9.1-linux-x86_64.tar.bz2
+  - tar -xvf phantomjs-1.9.1-linux-x86_64.tar.bz2
+  - export PATH=$(pwd)/phantomjs-1.9.1-linux-x86_64/bin/:$PATH
+  - echo "installing CasperJS 1.1"
+  - git clone git://github.com/n1k0/casperjs.git
+  - cd casperjs
+  - git checkout tags/1.1-beta1
+  - cd ..
+  - export PATH=$(pwd)/casperjs/bin/:$PATH
+  
+before_script:
+  - phantomjs --version
+  - casperjs --version
+
+script:
+  - ./tests/test
