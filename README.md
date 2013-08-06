@@ -109,7 +109,7 @@ $ ./tests/test
 ## Dependencies
 
 * [PhantomJS](http://github.com/ariya/phantomjs/wiki "PhantomJS Documentation")
-* [CasperJS](http://casperjs.org/api.html#intro "CasperJS Documentation") 1.1
+* [CasperJS](http://docs.casperjs.org/en/latest/index.html "CasperJS Documentation") 1.1
 
 ## Credits
 
