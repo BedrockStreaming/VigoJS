@@ -162,7 +162,7 @@
             if (this.config.env === 'prod') {
                 url = 'http://www.clubic.com/';
             } else if (this.config.env === 'dev') {
-                url = 'http://fdubost.dev.sf.clubic.com/';
+                url = 'http://dev.clubic.com/';
             }
         }
 
