@@ -168,7 +168,6 @@
                 casper.thenOpen(url, function() {
                     module.launchTest();
                 }).run(function() {
-                    casper.clear();
                     tester.done();
                 });
             });
