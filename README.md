@@ -8,7 +8,7 @@ VigoJS is a (small) Javascript tool using [CasperJS](http://casperjs.org/) and [
 * provides possibility of multiple environment configurations ('dev', 'prod', 'custom', etc.),
 * improves [terminal output](http://img560.imageshack.us/img560/57/alpo.png) by allowing to add title, description and comments for each test,
 * improves [xUnit output](http://img687.imageshack.us/img687/653/4jm.png) by allowing to customize *className* param for each group of tests,
-* improves failure reports by specifying the concerned url and automatically making a screenshot of the page,
+* improves failure reports by specifying the concerned url, test file and line and automatically making a screenshot of the page,
 * adds some useful methods to make writing tests faster : getting meta OG tags, detecting automatically PHP errors, checking HTTP status, etc.
 
 ## Installation
