@@ -120,6 +120,13 @@
         MockCasper.prototype.status = function() {
             return { currentHTTPStatus: 301 };
         };
+        MockCasper.prototype.waitForUrl = function(url, then, onTimeout, timeout) {
+            if ('google.fr'.match(url)) {
+                then();
+            } else {
+                onTimeout();
+            }
+        };
         
         cMock = new MockCasper();
         checker = new Checker(cMock, {});
@@ -132,7 +139,6 @@
         checker.checkHeaderLocation('google.fr');
 
         // Test checkRedirect
-        checker.checkRedirect('google.fr', 301);
         checker.checkRedirect('google.fr');
     };
 
