@@ -42,8 +42,9 @@
 
     // Casper and VigoJS helpers
     var genuineCasper = require('casper').Casper,
-        casper        = require(libPath + 'Casper').create(libPath, genuineCasper, casperOptions),
+        genuineTester = require('tester').Tester,
         utils         = require('utils'),
+        casper        = require(libPath + 'Casper').create(libPath, genuineCasper, genuineTester, casperOptions, utils),
         vigoUtils     = require(libPath + 'Utils')(fs),
         configurator  = require(libPath + 'Configurator')(utils),
         cli           = require(libPath + 'Cli')(fs.absolute('.') + '/config/config.definition.json', casper, vigoUtils),
@@ -148,6 +149,7 @@
 
             casper.echo('[' + item.name + ']' + (url ? ' - Main url : ' + url : ''), 'INFO_BAR');
             test.currentTestFile = module.xunitClass || item.name;
+            test.currentTestFilePath = item.filepath;
 
             casper.test.begin(module.title ? module.title : 'Untitled test suite', function(tester) {
                 module.setTest(tester);

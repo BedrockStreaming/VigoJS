@@ -43,7 +43,7 @@
             var item = sequence.list[test.currentSuiteNum];
             test.currentTestFile = item.name;
 
-            casper.test.begin('[' + item.name.replace(fs.workingDirectory + '/', '') + ']', function(tester) {           
+            casper.test.begin('[' + item.name.replace(fs.workingDirectory + '/', '') + ']', function(tester) {
                 casper.start().then(function() {
                     require(item.module).create(test, libPath, fs);
                 }).run(function() {
