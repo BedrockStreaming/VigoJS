@@ -1,6 +1,15 @@
 #!/bin/bash
 # VigoJS Shell Command
 
+if [[ "$OSTYPE" == *darwin* ]]
+then
+     READLINK_CMD='greadlink'
+     SED_CMD='gsed'
+else
+     READLINK_CMD='readlink'
+     SED_CMD='sed'
+fi
+
 CMD_DIR=$PWD
 
 VIGO_DIR=$(dirname $(readlink -f $0))
@@ -12,7 +21,7 @@ if [[ "$CASPERJS_CMD" != *"/"* ]]
 then
     CASPERJS_PATH=$(which $CASPERJS_CMD)
     
-    SYMLINK=$(readlink -f $CASPERJS_PATH)
+    SYMLINK=$($READLINK_CMD -f $CASPERJS_PATH)
     SYMLINK_RET=$?
     if [ ! $SYMLIN_RET ]
     then
@@ -22,7 +31,7 @@ else
     CASPERJS_PATH=$CASPERJS_CMD
 fi
 
-CASPERJS_PATH=$(echo $CASPERJS_PATH | sed -r 's/\/[^\/]*$/\/..\//')
+CASPERJS_PATH=$(echo $CASPERJS_PATH | $SED_CMD -r 's/\/[^\/]*$/\/..\//')
 export CASPERJS_PATH
 
 $PHANTOMJS_CMD --ignore-ssl-errors=yes Vigo.js --cmdDir=$CMD_DIR $@
